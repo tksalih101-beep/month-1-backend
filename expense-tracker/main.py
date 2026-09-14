@@ -106,7 +106,8 @@ def delete_all_expenses(expenses):
     if not expenses:
         print("\nThere are no expenses to delete.")
         return
-    confirmation = input("Delete ALL expenses? Type 'yes' to confirm: ").strip().lower()
+    confirmation = input(
+        "Delete ALL expenses? Type 'yes' to confirm: ").strip().lower()
     if confirmation == "yes":
         expenses.clear()
         save_expenses(expenses)
@@ -134,7 +135,8 @@ def show_summary(expenses):
     by_category = {}
     for expense in expenses:
         category = str(expense["category"])
-        by_category[category] = by_category.get(category, 0) + float(expense["amount"])
+        by_category[category] = by_category.get(
+            category, 0) + float(expense["amount"])
 
     print("Spending by category:")
     for category, amount in sorted(by_category.items(), key=lambda item: item[0].lower()):
